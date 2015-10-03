@@ -1,4 +1,4 @@
-FROM "php:5.4-cli"
+FROM php:5.4-cli
 
 RUN apt-get update && apt-get upgrade
 
