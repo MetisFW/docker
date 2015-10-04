@@ -11,7 +11,7 @@ RUN buildDeps=" \
 		zlib1g-dev \
 	"; \
 	set -x \
-	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
+	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends \
 	&& docker-php-ext-configure gd --enable-gd-native-ttf --with-jpeg-dir=/usr/lib/x86_64-linux-gnu --with-png-dir=/usr/lib/x86_64-linux-gnu --with-freetype-dir=/usr/lib/x86_64-linux-gnu \
 	&& docker-php-ext-install gd \
 	&& docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu \
