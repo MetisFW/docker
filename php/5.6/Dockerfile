@@ -1,7 +1,5 @@
 FROM php:5.6-cli
 
-RUN curl --silent --location https://deb.nodesource.com/setup_0.12 | bash -
-
 RUN apt-get update
 
 RUN buildDeps=" \
