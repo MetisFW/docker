@@ -1,5 +1,7 @@
 FROM php:7.0-cli
 
+RUN curl --silent --location https://deb.nodesource.com/setup_4.x | bash -
+
 RUN apt-get update
 
 RUN buildDeps=" \
