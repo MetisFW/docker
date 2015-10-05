@@ -11,7 +11,7 @@ RUN buildDeps=" \
 		libmcrypt-dev \
 		libpng12-dev \
 		zlib1g-dev \
-		libcurl-dev \
+		libcurl4-dev \
 	"; \
 	set -x \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends \
