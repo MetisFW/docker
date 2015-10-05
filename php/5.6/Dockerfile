@@ -1,5 +1,6 @@
 FROM php:5.6-cli
 
+
 RUN curl --silent --location https://deb.nodesource.com/setup_4.x | bash -
 
 RUN apt-get update
@@ -11,6 +12,7 @@ RUN buildDeps=" \
 		libmcrypt-dev \
 		libpng12-dev \
 		zlib1g-dev \
+		libcurl-dev \
 	"; \
 	set -x \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends \
