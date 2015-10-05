@@ -1,6 +1,6 @@
 FROM php:5.6-cli
 
-RUN curl --silent --location https://deb.nodesource.com/setup_4.x | bash -
+RUN curl --silent --location https://deb.nodesource.com/setup_0.12 | bash -
 
 RUN apt-get update
 
@@ -40,4 +40,5 @@ RUN buildDeps=" \
 
 RUN apt-get install -y git nodejs ssh mysql-client libfreetype6 libjpeg62-turbo libmcrypt4 libpng12-0 libpq5 sendmail --no-install-recommends && rm -rf /var/lib/apt/lists/*
 RUN ln -s /usr/bin/nodejs /usr/local/bin/node
+
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
