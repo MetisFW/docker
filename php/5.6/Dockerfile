@@ -1,6 +1,5 @@
 FROM php:5.6-cli
 
-
 RUN curl --silent --location https://deb.nodesource.com/setup_4.x | bash -
 
 RUN apt-get update
@@ -12,7 +11,8 @@ RUN buildDeps=" \
 		libmcrypt-dev \
 		libpng12-dev \
 		zlib1g-dev \
-		libcurl4-dev \
+		libcurl4-gnutls-dev \
+		libpq-dev \
 	"; \
 	set -x \
 	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends \
@@ -38,6 +38,6 @@ RUN buildDeps=" \
 	&& cd /usr/src/php \
 	&& make clean
 
-RUN apt-get install -y git nodejs nodejs-legacy npm ssh mysql-client libfreetype6 libjpeg62-turbo libmcrypt4 libpng12-0 sendmail --no-install-recommends && rm -rf /var/lib/apt/lists/*
-
+RUN apt-get install -y git nodejs ssh mysql-client libfreetype6 libjpeg62-turbo libmcrypt4 libpng12-0 sendmail --no-install-recommends && rm -rf /var/lib/apt/lists/*
+RUN ln -s /usr/bin/nodejs /usr/local/bin/node
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer

@@ -7,6 +7,11 @@
 - PHP 5.6 ([Dockerfile](https://github.com/MetisFW/docker/blob/master/php/5.6/Dockerfile))
 - PHP 7.0 ([Dockerfile](https://github.com/MetisFW/docker/blob/master/php/7.0/Dockerfile))
 
+## Build
+```
+docker build [path/to/dir]
+```
+
 ## License
 
 You may use this code under the terms of either 
